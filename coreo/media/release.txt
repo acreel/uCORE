@@ -1,0 +1,7 @@
+Release Notes for Milestone Able 
+
+1. CSRF Issue with AJAX fixed -  allows you to create link libraries from the main page.
+
+2. KML Namespace/KML Proxy Loading - Increases the number of KML/KMZ files that are supported.
+
+3. Add Main Page Nav (aka Back Button) -  Adds a link to main page and a link to the trophy rooms on the top navigation page.

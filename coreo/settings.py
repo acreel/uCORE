@@ -64,11 +64,12 @@ SECRET_KEY = '3e@l)b3b7!q@x558r%)cccigl5mb)!&ius9*4h2@9-t+=$rrq1'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+#   'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.transaction.TransactionMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -82,9 +83,10 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     '/Users/skawaii/sandbox/work/ucore/coreo/templates/ucore/',
-    '/Users/jashot7/Code/uCORE/coreo/templates/ucore/',
-    '/Users/jashot7/Code/andy/uCORE/coreo/templates/ucore/',
+    '/Users/jashot7/Dropbox/Code/uCORE/uCORE/coreo/templates/ucore/',
     'C:/dev/Django-1.2.3/uCORE/coreo/templates/ucore/',
+    '/Users/pboone/code/ucore/coreo/templates/ucore/',
+    '/Users/pcoleman/uCORE/coreo/templates/ucore/',
 )
 
 INSTALLED_APPS = (
@@ -99,7 +101,31 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'coreo.ucore',
+    #'compress',
 )
 
 SITE_ROOT = 'http://localhost:8080/'
+
+LOGIN_URL = '/login'
+
+SERIALIZATION_MODULES = {
+    'json': 'wadofstuff.django.serializers.json'
+}
+
+import logging
+
+try:
+  from local_settings import *
+  logging.basicConfig(
+      level=logging.DEBUG,
+      filename='ucore.log',
+      filemode = 'w'
+  )
+except ImportError, exp:
+   pass
+
+try:
+  INSTALLED_APPS += LOCAL_INSTALLED_APPS
+except:
+  pass
 

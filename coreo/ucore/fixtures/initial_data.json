@@ -1,0 +1,121 @@
+[
+ {
+        "model": "ucore.Tag",
+        "pk": 1,
+        "fields": {
+          "name": "Ocean",
+          "type": "T"
+       }
+ },
+ {
+      "model": "ucore.Tag",
+      "pk": 2,
+      "fields": {
+         "name": "Forrest",
+         "type": "T"
+       }
+ },
+ {
+       "model": "ucore.Tag",
+       "pk": 3,
+       "fields": {
+         "name": "Artic",
+         "type": "T"
+        }
+ },
+ {
+    "model": "ucore.Tag",
+    "pk": 4,
+    "fields": {
+       "name": "Desert",
+       "type": "T"
+     }
+ },
+ { 
+  "model": "ucore.Tag",
+  "pk": 5,
+  "fields": {
+      "name": "Beach",
+      "type": "T"
+    }
+ },
+ {
+   "model": "ucore.Tag",
+   "pk": 6,
+   "fields": { 
+     "name": "NA",
+     "type": "T"
+    }
+ },
+ {
+   "model": "ucore.Tag",
+   "pk": 7,
+   "fields": {
+     "name": "HotButton",
+     "type": "P"
+    }
+ },
+ {
+    "model": "ucore.Trophy",
+    "pk": 1,
+    "fields": {
+      "name": "Life is a beach",
+      "desc": "For 5 tropical searches",
+      "tag": 5,
+      "earning_req": 5,
+      "file_path": "images/beach.jpg"
+    }
+ },
+ {
+    "model": "ucore.Trophy",
+    "pk": 2,
+    "fields": {
+      "name": "Artic King",
+      "desc": "For 5 searches in the artic.",
+      "tag": 3,
+      "earning_req": 5,
+      "file_path": "images/snowmountain.jpg"
+    }
+ },
+ {
+    "model": "ucore.Trophy",
+    "pk": 3,
+    "fields": {
+      "name": "Forrest Ranger",
+      "desc": "For 5 searches over forrests.",
+      "tag": 2,
+      "earning_req": 5,
+      "file_path": "images/forrest.jpg"
+    }
+ },
+ {
+    "model": "ucore.Trophy",
+    "pk": 4,
+    "fields": {
+      "name": "Captain Blackbeard",
+      "desc": "For 5 searches over oceans.",
+      "tag": 1,
+      "earning_req": 5,
+      "file_path": "images/ocean.jpg"
+     }
+ },
+ {
+    "model": "ucore.Trophy",
+    "pk": 5,
+    "fields": {
+      "name": "Successful Registration",
+      "desc": "For a successful registration.",
+      "tag": 6,
+      "earning_req": 1,
+      "file_path": "images/dart_trophy.JPG"
+    }
+ },
+ {
+    "model": "ucore.Skin",
+    "pk" : 1,
+    "fields": {
+      "name" : "Default",
+      "file_path": "default.css"
+    }
+ }
+]

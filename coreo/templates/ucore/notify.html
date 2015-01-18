@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}  
+ <script type="text/javascript">
+     $(window ).load(function() {
+          setInterval("test();", 10000);
+        });
+     
+     function test()
+     {
+       $.getJSON("../notifications/", function(jsonstuff) {
+           if (!jQuery.isEmptyObject(jsonstuff))
+           {
+           document.getElementById("msgpart").innerHTML="<h2>" + jsonstuff[0].fields.message + "</h2><br/>";
+           $.post("../notifications/", { "id": jsonstuff[0].pk });
+           } else
+           {
+            document.getElementById("msgpart").innerHTML="No notifications.";
+           }
+           });
+          
+     }
+
+  </script>
+  {% endblock %}
+
+  {% block morebody %}
+  <br/><br/><br/>
+  <h1>Welcome to the notification page!</h1><br/>
+  <h4>The purpose of this page is to show via AJAX when you have new notifications</h4><br/><br/>
+  <div id="msgpart"></div>
+  {% endblock %}

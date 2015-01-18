@@ -16,14 +16,15 @@
       <a href="/"><img id="core-logo" height="28px" width="100px" align="bottom" src="{{ MEDIA_URL }}images/corelogobluecog2-100x28.png" alt="C()RE" />
     </a>
 
-    <div id="user-info"><a href="/register/fillThisIn"><span id="signuptext">Sign Up</span></a> | <a href="FutureFeature">Help</a> | <a href="FutureFeature">About</a></div>
+    <div id="user-info"><a href="/register/fillThisIn"><span id="signuptext">Sign Up</span></a> | <a href="/future-feature/">Help</a></div>
     </div>
   <div class="main_div">
     <div class="center_div">
       <h1>Sign In</h1>
       <div class="core_error_text">{% if error_message %}*** {{ error_message }} ***{% endif %}</div>
-      <form action="/login/" method="post">
-            <div>{% csrf_token %}</div>
+    <form action="/login/" method="post">
+      <div>{% csrf_token %}</div>
+      <div><input name="next" value="{{ next }}" type="hidden"/></div>
       <ol>
           <li>
             <label>Username</label>
@@ -36,7 +37,8 @@
           <li class="submit">
           <a href="#" style="min-width: 100px; margin: 10px 0pt 10px 90px;" class="button fit large"><input type="submit" value="Sign In" /></a>
           </li>
-      </ol>
+        </ol>
+      </form>
       </div> <!-- End center_div -->
   </div> <!-- End main_div -->
 
